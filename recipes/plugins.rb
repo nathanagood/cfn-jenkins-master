@@ -1,0 +1,10 @@
+jenkins_plugin 'job-dsl'
+jenkins_plugin 'git'
+jenkins_plugin 'scm-api'
+jenkins_plugin 'git-client'
+jenkins_plugin 'matrix-project'
+jenkins_plugin 'credentials'
+jenkins_plugin 'mailer'
+jenkins_plugin 'ssh-credentials'
+
+jenkins_command 'safe-restart'
