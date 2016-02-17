@@ -12,15 +12,15 @@ transport:
   ssh_key: /PATH/TO/PEM
   connection_timeout: 30
   connection_retries: 5
-  username: ubuntu
+  username: ec2-user
 
 provisioner:
   name: chef_solo
 
 platforms:
-  - name: ubuntu-14.04
+  - name: amazon
     driver:
-      image_id: ami-b2e3c6d8
+      image_id: ami-d4f7ddbe
       instance_type: m3.medium
 
 suites:
