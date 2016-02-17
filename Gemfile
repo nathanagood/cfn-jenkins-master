@@ -16,4 +16,4 @@ gem 'berkshelf'
 
 gem "chef", ">=12.5.1"
 gem "test-kitchen"
-gem "kitchen-vagrant"
+gem "kitchen-ec2"

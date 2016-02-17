@@ -1,13 +1,27 @@
 ---
 driver:
-  name: vagrant
+  name: ec2
+  aws_ssh_key_id: KEY_ID
+  region: us-east-1
+  availability_zone: us-east-1d
+  require_chef_omnibus: true
+  security_group_ids:
+    - sg-8d8b73f5
+
+transport:
+  ssh_key: /PATH/TO/PEM
+  connection_timeout: 30
+  connection_retries: 5
+  username: ubuntu
 
 provisioner:
   name: chef_solo
 
 platforms:
   - name: ubuntu-14.04
-  - name: centos-7.1
+    driver:
+      image_id: ami-b2e3c6d8
+      instance_type: m3.medium
 
 suites:
   - name: default

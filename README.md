@@ -1,42 +1,34 @@
-# cfn-jenkins-server-cookbook
+# Recipe for Jenkins Master Server
 
-TODO: Enter the cookbook description here.
+This recipe uses the [Chef Jenkins cookbook](https://github.com/chef-cookbooks/jenkins) as a starting point.
 
-## Supported Platforms
+It allows you to stand up a Jenkins master with a set of plugins installed based on the type of development you
+are doing. In other words, if you are doing Java development you can put the following line in your 
+`defaults.rb` file:
 
-TODO: List your supported platforms.
+    TODO example configuration
+ 
+The following plugins will be installed for you:
 
-## Attributes
+* PMD
+* Cobertura
+* JUnit
 
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['cfn-jenkins-server']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+You can supply more than one value. Valid values are:
 
-## Usage
+* AWS
+* Java
+* Groovy
+* Docker
 
-### cfn-jenkins-server::default
+The intention of this is to not provide an exhaustive list of plugins or to be too perscriptive with plugins. The
+intention is to provide a starting point that may be used to quickly configure a full-featured Jenkins server.
 
-Include `cfn-jenkins-server` in your node's `run_list`:
 
-```json
-{
-  "run_list": [
-    "recipe[cfn-jenkins-server::default]"
-  ]
-}
-```
+## Developing and testing changes
 
-## License and Authors
+To test these recipes, type the following commands locally:
 
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+    $ bundle install
+    $ bundle exec kitchen test
+
