@@ -1,7 +1,7 @@
 ---
 driver:
   name: ec2
-  aws_ssh_key_id: KEY_ID
+  aws_ssh_key_id: aws-ssh
   region: us-east-1
   availability_zone: us-east-1d
   require_chef_omnibus: true
@@ -9,7 +9,7 @@ driver:
     - sg-8d8b73f5
 
 transport:
-  ssh_key: /PATH/TO/PEM
+  ssh_key: /Users/nathgood/Keys/aws-ssh.pem
   connection_timeout: 30
   connection_retries: 5
   username: ec2-user
