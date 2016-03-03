@@ -9,7 +9,7 @@ driver:
     - sg-8d8b73f5
 
 transport:
-  ssh_key: /Users/nathgood/Keys/aws-ssh.pem
+  ssh_key: /path/to/my.pem
   connection_timeout: 30
   connection_retries: 5
   username: ec2-user
