@@ -22,10 +22,15 @@ end
 
 # Install some plugins useful for Java unit testing and static code analysis
 if node['jenkins_master']['plugin_profiles'].include? 'java'
-  jenkins_plugin 'junit'
+  jenkins_plugin 'junit' do
+    version '1.11'
+  end
   jenkins_plugin 'pmd'
   jenkins_plugin 'cobertura'
   jenkins_plugin 'gradle'
+  jenkins_plugin 'findbugs'
+  jenkins_plugin 'test-stability'
+  jenkins_plugin 'jacoco'
 end
 
 # Install plugins that are useful for development in an AWS ecosystem.
