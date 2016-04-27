@@ -6,6 +6,7 @@
 #
 #
 
+include_recipe 'java::default'
 include_recipe 'jenkins::master'
 include_recipe '::plugins'
-# include_recipe '::add_authentication'
+include_recipe '::add_authentication'

@@ -10,4 +10,5 @@ recipe 'plugins', 'Installs a Jenkins master'
 recipe 'users', 'Installs a Jenkins master'
 recipe 'scriptconfig', 'Installs a Jenkins master'
 
-depends 'jenkins',   '~> 2.4'
+depends 'java', '~> 1.39.0'
+depends 'jenkins',   '~> 2.4.1'

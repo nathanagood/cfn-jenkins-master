@@ -15,8 +15,10 @@ jenkins_script 'add_authentication' do
         import hudson.security.captcha.CaptchaSupport
         def instance = Jenkins.instance
         def realm = new HudsonPrivateSecurityRealm(false, false, (CaptchaSupport)null)
+        realm.createAccount('jenkins', 'myverysecretpassword')
         instance.securityRealm = realm
-        def strategy = new FullControlOnceLoggedInAuthorizationStrategy()
+        def strategy = new GlobalMatrixAuthorizationStrategy()
+        strategy.add(Jenkins.ADMINISTER, 'jenkins')
         instance.authorizationStrategy = strategy
         instance.save()
       EOH
